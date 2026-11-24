@@ -7,6 +7,14 @@ const cors = require('cors')
 
 // Routes Import
 const authRoutes = require('./routes/auth.routes')
+const packageRoutes= require("./routes/package.routes")
+const bookingRoutes=  require("./routes/booking.routes")
+const publicEventsRoutes= require("./routes/publicEvent.routes")
+const contactMessages= require("./routes/contactMessage.routes")
+
+
+
+
 
 
 // Middleware
@@ -22,8 +30,9 @@ app.use(morgan('dev'))
 
 // Routes
 app.use('/auth',authRoutes)
-
-
-
+app.use("/packages", packageRoutes)
+app.use("/bookings", bookingRoutes)
+app.use("/public-events", publicEventsRoutes)
+app.use("/contact-messages", contactMessages)
 
 module.exports = app
